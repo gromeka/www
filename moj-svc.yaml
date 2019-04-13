@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-www
+  namespace: instavote
+  labels:
+    role: apache
+spec:
+  selector:
+    role: apache
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30008
+  type: NodePort
